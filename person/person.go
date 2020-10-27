@@ -1,6 +1,9 @@
 package person
 
-import "gorm.io/gorm"
+import (
+	"github.com/gofiber/fiber"
+	"gorm.io/gorm"
+)
 
 // Person structure
 type Person struct {
@@ -8,4 +11,9 @@ type Person struct {
 	FirstName string `json:"first_name"`
 	LastName  string `json:"last_name"`
 	Avatar    string `json:"avatar"`
+}
+
+// GetPerson function
+func GetPerson(c *fiber.Ctx) {
+	c.Send("Test handler")
 }
